@@ -471,9 +471,9 @@ module Bluepill
       Timeout.timeout(secs.to_f, &blk)
 
     rescue Timeout::Error
-      logger.err "Execution is taking longer than expected. Unmonitoring."
+      logger.err "Execution is taking longer than expected. Downing."
       logger.err "Did you forget to tell bluepill to daemonize this process?"
-      self.dispatch!("unmonitor")
+      self.dispatch!("down")
     end
   end
 end
