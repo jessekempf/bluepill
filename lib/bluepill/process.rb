@@ -277,7 +277,7 @@ module Bluepill
             logger.warning "Start command execution returned non-zero exit code:"
             logger.warning result.inspect
           end
-        end until process_running?
+        end
       end
 
       self.skip_ticks_for(start_grace_time)
